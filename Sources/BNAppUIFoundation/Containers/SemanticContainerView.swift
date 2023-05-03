@@ -17,7 +17,7 @@ open class SemanticContainerView<View: UIView>: BaseStackView {
     
     public typealias Status = AnySemanticStatus
     
-    public var status: Status = .none {
+    public var status: Status? {
         didSet {
             setup(for: status)
         }
@@ -84,13 +84,14 @@ open class SemanticContainerView<View: UIView>: BaseStackView {
         view == _contentView || view == messageLabel
     }
     
-    private func setup(for status: Status) {
-        messageLabel.textColor = status.color.messageColor
-        messageLabel.text = status.message
+    private func setup(for status: Status?) {
+        
+        messageLabel.textColor = status?.color.messageColor
+        messageLabel.text = status?.message
         _contentView.layer.borderWidth = 1
         _contentView.layer.borderColor = status.color.borderColor.cgColor
         
-        if status.message.isEmpty {
+        if (status?.message ?? "").isEmpty {
             messageLabel.removeFromSuperview()
         } else if !self.arrangedSubviews.contains(messageLabel) {
             self.addArrangedSubview(messageLabel)

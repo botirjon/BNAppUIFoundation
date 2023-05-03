@@ -8,53 +8,14 @@
 import Foundation
 import UIKit
 
+public protocol AnySemanticStatus {
+    var message: String { get }
+    var color: UIColor { get }
+}
 
 open class SemanticContainerView<View: UIView>: BaseStackView {
     
-//    public enum Status {
-//        case success(message: String = "")
-//        case warning(message: String = "")
-//        case error(message: String = "")
-//        case custom(message: String = "", messageColor: UIColor = .appTextTertiary, borderColor: UIColor = .clear)
-//        case none
-//
-//        public var message: String {
-//            switch self {
-//            case .success(let message):
-//                return message
-//            case .warning(let message):
-//                return message
-//            case .error(let message):
-//                return message
-//            case .custom(let message, _, _):
-//                return message
-//            case .none:
-//                return ""
-//            }
-//        }
-//
-//        var color: Color {
-//            switch self {
-//            case .success:
-//                return .init(messageColor: .appGreen, borderColor: .appGreen)
-//            case .warning:
-//                return .init(messageColor: .appAccent, borderColor: .appAccent)
-//            case .error:
-//                return .init(messageColor: .appRed, borderColor: .appRed)
-//            case .custom(_, let messageColor, let borderColor):
-//                return .init(messageColor: messageColor, borderColor: borderColor)
-//            case .none:
-//                return .init(messageColor: .clear, borderColor: .clear)
-//            }
-//        }
-//
-//        struct Color {
-//            var messageColor: UIColor
-//            var borderColor: UIColor
-//        }
-//    }
-    
-    public typealias Status = SemanticStatus
+    public typealias Status = AnySemanticStatus
     
     public var status: Status = .none {
         didSet {

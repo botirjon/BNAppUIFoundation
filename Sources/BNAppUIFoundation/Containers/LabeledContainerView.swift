@@ -69,7 +69,6 @@ open class LabeledContainerView<View: UIView>: BaseStackView {
         let label = ContentHuggingLabel()
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
-        label.th.setTextColor(.textSecondary)
         return label
     }()
     

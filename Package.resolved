@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "bnappfoundation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/botirjon/BNAppFoundation.git",
+      "state" : {
+        "revision" : "88b0c154cfe4f5562e5cfeff799c82e94574b11a",
+        "version" : "1.5.0"
+      }
+    },
+    {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",

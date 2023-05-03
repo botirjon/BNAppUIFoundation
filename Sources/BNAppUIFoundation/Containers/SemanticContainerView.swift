@@ -90,7 +90,6 @@ open class SemanticContainerView<View: UIView>: BaseStackView {
         let label = ContentHuggingLabel()
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
-        label.font = .gilroyFont(ofSize: 12)
         return label
     }()
     

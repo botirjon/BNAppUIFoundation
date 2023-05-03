@@ -31,6 +31,15 @@ open class LabeledContainerControl<View: UIView>: ContainerControl<LabeledContai
             view.cornerRadius
         }
     }
+    
+    open var spacing: CGFloat {
+        set {
+            view.spacing = newValue
+        }
+        get {
+            view.spacing
+        }
+    }
 }
 
 open class LabeledContainerView<View: UIView>: BaseStackView {
@@ -65,13 +74,12 @@ open class LabeledContainerView<View: UIView>: BaseStackView {
         return label
     }()
     
-    
     open override func initView() {
         super.initView()
         self.axis = .vertical
         self.distribution = .fill
         self.alignment = .center
-        self.spacing = .scaling(6, along: .y)
+        self.spacing = 6
         self.addArrangedSubview(view)
         view.snp.makeConstraints { make in
             make.width.equalToSuperview()

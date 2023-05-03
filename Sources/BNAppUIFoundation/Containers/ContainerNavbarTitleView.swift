@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import BNAppFoundation
 
 
 public final class ContainerNavbarTitleView<View: UIView>: ContainerView<View> {
@@ -17,7 +18,7 @@ public final class ContainerNavbarTitleView<View: UIView>: ContainerView<View> {
         }
     }
     
-    public var height: CGFloat = .height(scaling: 44) {
+    public var height: CGFloat = 44 {
         didSet {
             invalidateIntrinsicContentSize()
         }
